@@ -41,45 +41,45 @@ public class SumPlusAddTest {
     void smallFixedScenario() {
         Long[] a = {1L, 2L, 3L, 4L, 5L};
         SegmentTree<Long, Long> st = new SegmentTree<>(a, new SumCombiner(), new AddUpdater());
-        assertEquals(9, st.query(1, 4));
-        st.update(0, 5, 3L);
-        assertEquals(26, st.query(1, 5));
-        st.update(2, 4, 2L);
-        assertEquals(30, st.query(1, 5));
-        assertEquals(9, st.query(0, 2));
-        st.update(0, 1, 1L);
-        assertEquals(10, st.query(0, 2));
+        assertEquals(9, st.query(1, 4)); // 2+3+4
+        st.update(0, 5, 3L); // +3 to all
+        assertEquals(26, st.query(1, 5)); // 5+6+7+8
+        st.update(2, 4, 2L); // +2 to indices 2 and 3
+        assertEquals(30, st.query(1, 5)); // 5+8+9+8
+        assertEquals(9, st.query(0, 2)); // 4+5
+        st.update(0, 1, 1L); // +1 to index 0
+        assertEquals(10, st.query(0, 2)); // 5+5
     }
 
     @Test
     void pointRange() {
         Long[] a = {1L, 2L, 3L, 4L, 5L};
         SegmentTree<Long, Long> st = new SegmentTree<>(a, new SumCombiner(), new AddUpdater());
-        assertEquals(3, st.query(2, 3));
-        st.update(2, 3, 5L);
-        assertEquals(8, st.query(2, 3));
-        st.update(2, 3, -3L);
-        assertEquals(5, st.query(2, 3));
+        assertEquals(3, st.query(2, 3)); // just 3
+        st.update(2, 3, 5L); // +5 to index 2
+        assertEquals(8, st.query(2, 3)); // now 8
+        st.update(2, 3, -3L); // -3 to index 2
+        assertEquals(5, st.query(2, 3)); // now 5
     }
 
     @Test
     void fullRange() {
         Long[] a = {1L, 2L, 3L, 4L, 5L};
         SegmentTree<Long, Long> st = new SegmentTree<>(a, new SumCombiner(), new AddUpdater());
-        assertEquals(15, st.query(0, 5));
-        st.update(0, 5, 2L);
-        assertEquals(25, st.query(0, 5));
+        assertEquals(15, st.query(0, 5)); // 1+2+3+4+5
+        st.update(0, 5, 2L); // +2 to all
+        assertEquals(25, st.query(0, 5)); // 3+4+5+6+7
     }
 
     @Test
     void boundaryRanges() {
         Long[] a = {1L, 2L, 3L, 4L, 5L};
         SegmentTree<Long, Long> st = new SegmentTree<>(a, new SumCombiner(), new AddUpdater());
-        assertEquals(1, st.query(0, 1));
-        assertEquals(5, st.query(4, 5));
-        st.update(0, 1, 3L);
+        assertEquals(1, st.query(0, 1)); // left boundary
+        assertEquals(5, st.query(4, 5)); // right boundary
+        st.update(0, 1, 3L); // +3 to left boundary
         assertEquals(4, st.query(0, 1));
-        st.update(4, 5, 1L);
+        st.update(4, 5, 1L); // +1 to right boundary
         assertEquals(6, st.query(4, 5));
     }
 
@@ -87,9 +87,9 @@ public class SumPlusAddTest {
     void consecutiveUpdates() {
         Long[] a = {1L, 2L, 3L, 4L, 5L};
         SegmentTree<Long, Long> st = new SegmentTree<>(a, new SumCombiner(), new AddUpdater());
-        st.update(1, 4, 2L);
-        st.update(2, 5, 3L);
-        assertEquals(30, st.query(0, 5));
+        st.update(1, 4, 2L); // +2 to 1,2,3
+        st.update(2, 5, 3L); // +3 to 2,3,4
+        assertEquals(30, st.query(0, 5)); // 1 + 4 + 8 + 9 + 8
     }
 
     @Test
