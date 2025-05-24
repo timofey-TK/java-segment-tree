@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="segtrees.SumPlusAddTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-05-24T13:02:54" hostname="WIN-332SJ4VVUSJ" time="0.046">
+  <properties/>
+  <testcase name="fullRange()" classname="segtrees.SumPlusAddTest" time="0.025"/>
+  <testcase name="smallFixedScenario()" classname="segtrees.SumPlusAddTest" time="0.003"/>
+  <testcase name="boundaryRanges()" classname="segtrees.SumPlusAddTest" time="0.003"/>
+  <testcase name="randomOperations()" classname="segtrees.SumPlusAddTest" time="0.004"/>
+  <testcase name="pointRange()" classname="segtrees.SumPlusAddTest" time="0.001"/>
+  <testcase name="consecutiveUpdates()" classname="segtrees.SumPlusAddTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

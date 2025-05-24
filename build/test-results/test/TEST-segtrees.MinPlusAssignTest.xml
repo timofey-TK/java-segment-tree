@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="segtrees.MinPlusAssignTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-05-24T13:02:54" hostname="WIN-332SJ4VVUSJ" time="0.018">
+  <properties/>
+  <testcase name="fullRange()" classname="segtrees.MinPlusAssignTest" time="0.002"/>
+  <testcase name="smallFixedScenario()" classname="segtrees.MinPlusAssignTest" time="0.001"/>
+  <testcase name="boundaryRanges()" classname="segtrees.MinPlusAssignTest" time="0.001"/>
+  <testcase name="randomOperations()" classname="segtrees.MinPlusAssignTest" time="0.004"/>
+  <testcase name="pointRange()" classname="segtrees.MinPlusAssignTest" time="0.002"/>
+  <testcase name="consecutiveUpdates()" classname="segtrees.MinPlusAssignTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
